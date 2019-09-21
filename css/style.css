@@ -1,0 +1,387 @@
+*{
+	box-sizing: border-box; 
+	/* This makes the widths of elements more consistent
+		Full details here https://css-tricks.com/box-sizing/ */
+}
+
+body{
+	margin: 0px; /* Often browsers have a 5px margin by deafult*/
+	background: black;
+}
+
+
+
+/*------------------------------------------------*/
+
+
+
+/*| NAVIGATION |*/
+nav{
+	width: 100%;
+	height: 50px;
+	background-color: #e6e9e0;
+    position: fixed;
+    text-align: center;
+    font-family: courier new;  
+}
+
+nav ul{
+    list-style: none;
+    position: relative;
+    display: inline-table;
+}
+
+nav ul a{
+    color:#a91f23;
+	line-height: 25px;
+	margin-left: 4em;
+	margin-right: 4em;
+	text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+nav ul a:hover{
+	color: #DB959B;
+}
+
+
+
+/*------------------------------------------------*/
+
+
+
+/*| TEXT |*/
+h1{
+    font-family: copperplate; 
+    font-size: 8vw; 
+    text-align: center; 
+    letter-spacing: 8px; 
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+
+/*------------------------------------------------*/
+
+
+/*| SLIDESHOW CSS |*/
+.slideshow_container {
+    max-width: 850px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -40px;
+    text-align: center;
+}
+
+.slideshow_container a{
+    font-family: "courier new";
+    color: #AE8A31;
+    font-size: 8px;
+    margin-top: -50px;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+.img_container {
+  display: inline-block;
+  position: relative;
+}
+
+.img_container::before {
+  position: absolute;
+  top: -3%;
+  left: -2%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #AE8A31;
+  content: '';
+}
+
+/* Dot Indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #e6e9e0;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.active {
+    background-color: #a91f23;
+}
+
+.dot:hover{
+    background-color: #DB959B;
+}
+
+/* Fading Animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+
+
+/*------------------------------------------------*/
+
+
+
+/*| FOLLOW BUTTON |*/
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes follow-animation {
+    from {background: white; color: #AE8A31; width: 85px; left: 83%;}
+    to {background: #AE8A31; border-color: #297770; color: #fff; width: 120px; left: 80%;;}
+}
+@-webkit-keyframes unfollow-animation {
+    from {background: #AE8A31; color: #fff; width: 120px; left: 80%;}
+    to {background: white; border-color: #297770; color: #AE8A31; width: 85px; left: 83%;}
+}
+
+/* Standard syntax */
+@keyframes follow-animation {
+    from {background: white; color: #AE8A31; width: 85px; left: 83%;}
+    to {background: #AE8A31; border-color: #297770; color: #fff; width: 120px; left: 80%;}
+}
+@keyframes unfollow-animation {
+    from {background: #AE8A31; color: #fff; width: 120px; left: 80%;}
+    to {background: white; border-color: #297770; color: #AE8A31; width: 85px; left: 83%;}
+}
+
+input {
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+input:after {
+    color: #AE8A31;
+    font-family: "courier new";
+    font-size: 16px;
+    background-color: #ffffff;
+    border: 3px solid;
+    border-color: rgb(41, 119, 112);
+    border-radius: 40px;
+    position: absolute;
+    top: 2%;
+    left: 83%;	
+    display: inline-block;
+    text-align: center;
+    padding: 5px 15px;
+
+    content: 'follow';
+    -webkit-animation: unfollow-animation 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-animation-fill-mode:forwards;
+    animation: unfollow-animation 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-fill-mode:forwards;
+}
+
+input:checked:after {
+    content: 'following';
+    -webkit-animation: follow-animation 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-animation-fill-mode:forwards;
+    animation: follow-animation 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-fill-mode:forwards;
+}
+
+
+
+/*------------------------------------------------*/
+
+
+
+/*| HEART BUTTON |*/
+.like_btn{
+    height:100px;
+    top: 2%;
+    left: 2%;
+    position: absolute;
+}
+
+i {
+    cursor:pointer;
+    background:#fff;
+    border-radius:50%;
+    display:inline-block;
+    margin:0 0 15px;
+    color:#aaa;
+    transition:.2s;
+    border: 3px solid;
+    border-color: rgb(41, 119, 112);
+}
+
+i:hover {
+    color:#AE8A31;
+}
+
+.gold-heart{
+    background:#fff;
+    color: #AE8A31;
+}
+
+
+
+
+/*------------------------------------------------*/
+
+
+
+/*| SAVE BUTTON |*/
+.save_btn{
+    height:100px;
+    top: 18%;
+    left: 2%;
+    position: absolute;
+}
+
+.gold-bookmark{
+    background:#fff;
+    color: #AE8A31;
+}
+
+
+
+/*------------------------------------------------*/
+
+
+
+/*| COMMENt BUTTON |*/
+.comment_btn{
+    height:100px;
+    top: 10%;
+    left: 2%;
+    position: absolute;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0%;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+    text-align: left;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #e6e9e0;
+    margin: 10% auto; 
+    border: 5px solid rgb(41, 119, 112);;
+    width: 40%; /* Could be more or less, depending on screen size */
+    font-family: baskerville;
+    color: #AE8A31;
+    letter-spacing: 4px;
+}
+
+/* Add Zoom Animation when the comment button is pressed and the modal is opened */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.container {
+    padding: 16px;
+}
+
+
+/* Full-width inputs on the form*/
+input[type=text] {
+    width: 100%;
+    padding: 12px 10px 82px 10px;
+    margin: 8px 0px;
+    display: inline-block;
+    border: 1px solid #a91f23;
+    box-sizing: border-box;
+    font-family: courier new;
+    font-size: 16px;
+    letter-spacing: 4px;
+    background: #e6e9e0;
+    overflow: scroll;
+}
+
+
+.cancel_btn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #AE8A31;
+    font-family: courier new;
+    font-size: 16px;
+    color: white;
+    margin: 8px 3px 8px 3px;
+    border: none;
+    cursor: pointer;
+}
+
+.post_btn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #AE8A31;
+    font-family: courier new;
+    font-size: 16px;
+    color: white;
+    margin: 8px 3px 8px 345px;
+    border: none;
+    cursor: pointer;
+}
+
+                
+/* Change styles for span and cancel button on extra small screens */
+/*
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}
+      
+*/
+
+
+
+
+
+
+
+
+
+

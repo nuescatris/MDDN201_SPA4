@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>MDDN201_SPA4</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+<body>
+    
+    <nav>
+        <ul>
+            <a href="index.html">Home</a>
+        </ul>	
+	</nav>
+    
+    <br><br>
+    
+    <h1 style="text-shadow: -20.5px -13.5px 8px rgba(41, 119, 112, 0.5); color: #AE8A31;">LOOKBOOK</h1>
+    
+    <div class="slideshow_container">
+        <div class="mySlides fade">
+            <div class="img_container">
+                <img src="img/lb1.jpg" style="width:100%" alt="Vintage photo created by freepik - www.freepik.com">
+            </div>
+            <input type="checkbox"/>       
+            <a href="https://www.freepik.com/free-photo/elegant-woman-costume-hat-with-handbag-room_3918446.htm#page=1&query=fashion&position=0 ">Vintage photo created by freepik - www.freepik.com</a>
+            
+            <div class="like_btn">
+                <i onclick="likeFunction(this)" class="fa fa-heart" style="font-size: 18px;  padding:10px 12px 8px;"></i>
+            </div>
+            
+            <div class="save_btn">
+                <i onclick="saveFunction(this)" class="fa fa-bookmark" style="font-size: 18px;  padding:10px 14.5px 8px 14.5px;"></i>
+            </div>
+            
+            <div class="comment_btn">
+                <i onclick=
+                   "document.getElementById('commentModal').style.display='block'" class="fas fa-comment-dots" style="font-size: 19px;  padding:9px 12px 9px 12px;"></i>
+            </div>
+                
+            <div class="save_btn">
+                <i onclick="saveFunction(this)" class="fa fa-bookmark" style="font-size: 18px;  padding:10px 14.5px 8px 14.5px;"></i>
+            </div>
+        </div>
+        
+        <div class="mySlides fade">
+            <img src="img/lb2.jpg" style="width:100%" alt="Business photo created by senivpetro - www.freepik.com">
+            <input type="checkbox"/>
+            <a href="https://www.freepik.com/free-photo/young-woman-suit-standing-by-scooter_3654047.htm">Business photo created by senivpetro - www.freepik.com</a>
+            
+            <div class="like_btn">
+                <i onclick="likeFunction(this)" class="fa fa-heart" style="font-size: 18px;  padding:10px 12px 8px;"></i>
+            </div>
+            
+            <div class="comment_btn">
+                <i onclick=
+                   "document.getElementById('commentModal').style.display='block'" class="fas fa-comment-dots" style="font-size: 19px;  padding:9px 12px 9px 12px;"></i>
+            </div>
+            
+            <div class="save_btn">
+                <i onclick="saveFunction(this)" class="fa fa-bookmark" style="font-size: 18px;  padding:10px 14.5px 8px 14.5px;"></i>
+            </div>
+        </div>
+        
+        <div class="mySlides fade">
+            <img src="img/lb3.jpg" style="width:100%" alt="Photo created by freepik - www.freepik.com">
+            <input type="checkbox"/>
+            <a href="https://www.freepik.com/free-photo/pretty-blonde-woman-park-wearing-summer-look_5495140.htm ">Photo created by freepik - www.freepik.com</a>
+            
+            <div class="like_btn">
+                <i onclick="likeFunction(this)" class="fa fa-heart" style="font-size: 18px;  padding:10px 12px 8px;"></i>
+            </div>
+            
+            <div class="comment_btn">
+                <i onclick=
+                   "document.getElementById('commentModal').style.display='block'" class="fas fa-comment-dots" style="font-size: 19px;  padding:9px 12px 9px 12px;"></i>
+            </div>
+            
+            <div class="save_btn">
+                <i onclick="saveFunction(this)" class="fa fa-bookmark" style="font-size: 18px;  padding:10px 14.5px 8px 14.5px;"></i>
+            </div>
+        </div>
+        <br>
+        
+        <!-- The dots/circles -->
+        <div class="dots" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        
+    </div>
+    
+    <br><br>
+    
+
+    <!-- Javascript code for Follow Button -->
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {
+                slideIndex = 1
+            } 
+            
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block"; 
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+    
+    
+    <!-- Javascript code for Heart Button -->
+    <script>
+        function likeFunction(x) {
+            x.classList.toggle("gold-heart");
+        }
+        
+        function saveFunction(x) {
+            x.classList.toggle("gold-bookmark");
+        }
+        
+    </script>
+    
+    <!--Modal Code Begins-->
+    <li style="list-style: none; display: inline">
+        <div class="modal" id="commentModal">
+            <span class="close" onclick="document.getElementById('commentModal').style.display='none'" title="Close Modal">&times;</span> 
+            
+            <!--Modal Content-->
+            <form class= "modal-content animate">
+                <!--Container for Comment-->
+                <div class="container">
+                    <label><b>COMMENT</b></label> 
+                    <input name="name" placeholder="Add Comment" required="" type="text">
+                            
+                    <button class="cancel_btn" onclick= "document.getElementById('commentModal').style.display='none'" type="button">Cancel</button>
+                            
+                    <button class="post_btn" onclick= "document.getElementById('commentModal').style.display='none'" type="submit">Post</button>
+                </div>
+            </form>
+        </div>
+    </li> 
+    <!--Javascript code to create a functional modal on the page-->
+    <script>
+        var modal = document.getElementById('commentModal');
+        
+        window.onclick = function(event) {
+            if (event.target == modal) { 
+                modal.style.display = "none";
+            }
+        }
+    </script>
+      
+</body>
+
+</html>
